@@ -21,3 +21,13 @@
     background-color: #ECEABE;
     color: black;
 }
+
+.log {
+    width: 308px;
+    height: 100px;
+}
+
+.story {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
