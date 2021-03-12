@@ -124,7 +124,7 @@ document.getElementById('btn_sqrt').addEventListener('click', function () {
     let result = Math.sqrt(lastOperand);
 
     numToStory += 1;
-    operationToStory = `${numToStory}. квадратный корень из ${lastOperand} = ${result}`;
+    operationToStory = `${numToStory}) квадратный корень из ${lastOperand} = ${result}`;
     document.getElementById('story_block').value += `${operationToStory}\n`;
 
     operation = null;
@@ -134,7 +134,10 @@ document.getElementById('btn_sqrt').addEventListener('click', function () {
 })
 
 document.getElementById('btn_point').addEventListener('click', function () {
-    inputWindow.value += '.';
+    if (inputWindow.value.length === 1) {
+        inputWindow.value += '.';
+    }
+    clickQuantity += 1;
 })
 
 document.getElementById('btn_negative').addEventListener('click', function () {
@@ -177,13 +180,13 @@ document.getElementById('btn_calc').addEventListener('click', function () {
 
     numToStory += 1;
     switch (operation) {
-        case 'sum': operationToStory = `${numToStory}. ${lastOperand} + ${inputWindow.value} = ${result}`;
+        case 'sum': operationToStory = `${numToStory}) ${lastOperand} + ${inputWindow.value} = ${result}`;
             break;
-        case 'dif': operationToStory = `${numToStory}. ${lastOperand} - ${inputWindow.value} = ${result}`;
+        case 'dif': operationToStory = `${numToStory}) ${lastOperand} - ${inputWindow.value} = ${result}`;
             break;
-        case 'mult': operationToStory = `${numToStory}. ${lastOperand} * ${inputWindow.value} = ${result}`;
+        case 'mult': operationToStory = `${numToStory}) ${lastOperand} * ${inputWindow.value} = ${result}`;
             break;
-        case 'div': operationToStory = `${numToStory}. ${lastOperand} / ${inputWindow.value} = ${result}`;
+        case 'div': operationToStory = `${numToStory}) ${lastOperand} / ${inputWindow.value} = ${result}`;
             break;
     }
     document.getElementById('story_block').value += `${operationToStory}\n`;
