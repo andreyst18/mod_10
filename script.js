@@ -25,6 +25,9 @@ document.getElementById('btn_0').addEventListener('click', function () {
     if (inputWindow.value[0] != '0') {
         inputWindow.value += 0;
     }
+    if (inputWindow.value[0] == '0' && inputWindow.value[1] === '.') {
+        inputWindow.value += 0;
+    }
 })
 
 document.getElementById('btn_1').addEventListener('click', function () {
